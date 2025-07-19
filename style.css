@@ -1,0 +1,434 @@
+@font-face {
+  font-family: "Orbitron";
+  src: url("./fonts/Orbitron/static/Orbitron-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("./fonts/Orbitron/static/Orbitron-Bold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Exo-2";
+  src: url("./fonts/Exo_2/static/Exo2-Regular.ttf");
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  color: #d1d1ff;
+  font-family: "Orbitron", "Exo-2";
+}
+
+#myVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: -100;
+  object-fit: cover;
+}
+
+.header {
+  width: 100%;
+  background: #171738;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+}
+
+.header-left {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-description {
+  font-size: 36px;
+}
+
+.logo {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+
+#clock {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.logo img {
+  width: 150px;
+}
+
+.header-list {
+  width: 25%;
+  flex-wrap: wrap;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  gap: 10px;
+}
+
+.header-item {
+  width: 160px;
+  height: 35px;
+  background-color: #2d2838;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.header-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #ffe81f;
+  font-family: "Orbitron", "Exo-2";
+  font-size: 18px;
+}
+
+.header-item:hover {
+  background: #222;
+  color: #00eaff;
+}
+
+.header-description {
+  font-size: 36px;
+}
+
+a {
+  color: inherit; /* Цвет ссылок становится таким же, как цвет родительского элемента */
+  text-decoration: none; /* Убираем подчёркивание */
+  background-color: transparent; /* Фон прозрачный, чтобы не выделяться */
+  cursor: pointer; /* Оставляем указатель, чтобы было понятно, что ссылка кликабельна */
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.cart {
+  width: 400px;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.849);
+  border: 2px solid #ffe81f;
+  border-radius: 12px;
+  padding: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cart:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 0 32px #ffe81f99, 0 8px 32px #000a;
+  border-color: #ffe81f;
+  z-index: 2;
+}
+
+.cart-logo-container {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-logo-container svg {
+  filter: drop-shadow(0 0 8px #ffe81f);
+  width: 120px;
+  height: 90px;
+}
+
+.cart-start {
+  color: #25e4ef;
+}
+
+.cart-title {
+  color: #ffe81f;
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-family: "Orbitron", "Exo-2", sans-serif;
+}
+.cart-description {
+  color: #ffe81f;
+  font-size: 18px;
+  font-family: "Orbitron", "Exo-2", sans-serif;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.footer {
+  width: 100%;
+  background: #171738;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 2px dashed #ffe81f;
+}
+
+.footer-link {
+  color: #ffe81f;
+  font-family: "Orbitron", "Exo-2";
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+.footer-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.footer-logo {
+  width: 100px;
+  height: 100px;
+}
+
+.footer-text {
+  color: #ffe81f;
+  font-family: "Orbitron", "Exo-2", sans-serif;
+  font-size: 18px;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.burger span {
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 4px 0;
+  background-color: #ffe81f;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 1400px) {
+  .header-description {
+    font-size: 28px;
+  }
+
+  .header-item {
+    width: 140px;
+  }
+
+  .cart {
+    width: 350px;
+    height: 600px;
+  }
+
+  .cart-logo-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .cart-description {
+    font-size: 16px;
+  }
+
+  .footer-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .footer-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header-description {
+    font-size: 24px;
+  }
+
+  .logo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .header-item {
+    width: 100px;
+  }
+
+  .header-link {
+    font-size: 14px;
+  }
+
+  .cart {
+    width: 300px;
+    height: 550px;
+  }
+
+  .cart-logo-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cart-description {
+    font-size: 13px;
+  }
+
+  .footer-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .footer-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 992px) {
+  .burger {
+    display: flex;
+  }
+
+  .header-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #171738;
+    flex-direction: column;
+    width: 200px;
+    box-shadow: 0 8px 32px #000a;
+    padding: 20px 0;
+    gap: 10px;
+    z-index: 99;
+  }
+
+  .active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-item {
+    width: 70%;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    height: auto;
+    padding-bottom: 10px;
+  }
+
+  .header-description {
+    font-size: 22px;
+  }
+
+  .cart {
+    width: 300px;
+    height: 500px;
+  }
+
+  .cart-logo-container {
+    width: 90px;
+    height: 90px;
+  }
+
+  .cart-description {
+    font-size: 12px;
+  }
+
+  .footer-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .footer-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-list {
+    flex-direction: column;
+  }
+
+  .header {
+    height: 100px;
+  }
+
+  .header-description {
+    font-size: 20px;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .header-item {
+    width: 70%;
+  }
+
+  .cart {
+    margin: 20px;
+    width: 100%;
+    height: auto;
+  }
+
+  .cart-logo-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .footer-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .footer-text {
+    font-size: 12px;
+  }
+}
